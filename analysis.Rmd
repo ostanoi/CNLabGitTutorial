@@ -63,3 +63,16 @@ ggplot(mtcars, aes(x = factor(am), y = mpg)) +
        y = "Miles Per Gallon")
 ```
 
+# Add scatterplot grouped by gear
+```{r}
+ggplot(mtcars, aes(x = hp, y = mpg, color = factor(gear), size = wt)) +
+    geom_point() +
+    theme_minimal() +
+    labs(title = "Miles Per Gallon vs Horsepower",
+         x = "Horsepower",
+         y = "Miles Per Gallon",
+         color = "Gears",
+         size = "Weight")
+```
+
+
