@@ -18,15 +18,19 @@ data(mtcars)
 # Basic summary of the dataset
 summary(mtcars)
 
-# Improved scatter plot with color and size aesthetics
-ggplot(mtcars, aes(x = hp, y = mpg, color = factor(cyl), size = wt)) +
-  geom_point() +
-  theme_minimal() +
-  labs(title = "Miles Per Gallon vs Horsepower",
-       x = "Horsepower",
-       y = "Miles Per Gallon",
-       color = "Cylinders",
-       size = "Weight")
+create_scatter_plot <- function(df) {
+  ggplot(df, aes(x = hp, y = mpg, color = factor(cyl), size = wt)) +
+    geom_point() +
+    theme_minimal() +
+    labs(title = "Miles Per Gallon vs Horsepower",
+         x = "Horsepower",
+         y = "Miles Per Gallon",
+         color = "Cylinders",
+         size = "Weight")
+}
+
+# Call the function
+create_scatter_plot(mtcars)
 
 
 # Linear model predicting mpg based on hp
