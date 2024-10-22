@@ -34,4 +34,12 @@ model <- lm(mpg ~ hp, data = mtcars)
 summary(model)
 
 ```
+```{r}
+# Bar plot of the number of cylinders
+ggplot(mtcars, aes(x = factor(cyl))) +
+  geom_bar() +
+  labs(title = "Count of Cars by Cylinder",
+       x = "Cylinders",
+       y = "Count")
+```
 
