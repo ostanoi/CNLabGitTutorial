@@ -1,0 +1,34 @@
+---
+title: "analysis"
+output: html_document
+date: "2024-10-22"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Load libraries
+library(tidyverse)
+
+# Load mtcars dataset
+data(mtcars)
+
+# Basic summary of the dataset
+summary(mtcars)
+
+# Scatter plot of mpg vs hp
+ggplot(mtcars, aes(x = hp, y = mpg)) +
+  geom_point() +
+  theme_minimal() +
+  labs(title = "Miles Per Gallon vs Horsepower",
+       x = "Horsepower",
+       y = "Miles Per Gallon")
+
+# Linear model predicting mpg based on hp
+model <- lm(mpg ~ hp, data = mtcars)
+summary(model)
+
+```
+
