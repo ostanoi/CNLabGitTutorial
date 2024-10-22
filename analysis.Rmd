@@ -52,3 +52,14 @@ model2 <- lm(mpg ~ hp + wt, data = mtcars)
 summary(model2)
 ```
 
+
+```{r}
+# Boxplot comparing mpg by transmission type
+ggplot(mtcars, aes(x = factor(am), y = mpg)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(title = "Comparison of MPG by Transmission Type",
+       x = "Transmission (0 = automatic, 1 = manual)",
+       y = "Miles Per Gallon")
+```
+
