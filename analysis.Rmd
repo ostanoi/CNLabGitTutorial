@@ -42,4 +42,9 @@ ggplot(mtcars, aes(x = factor(cyl))) +
        x = "Cylinders",
        y = "Count")
 ```
+```{r}
+# Linear model predicting mpg based on hp and wt
+model2 <- lm(mpg ~ hp + wt, data = mtcars)
+summary(model2)
+```
 
